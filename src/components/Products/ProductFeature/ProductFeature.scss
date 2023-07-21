@@ -1,0 +1,114 @@
+.product-card{
+    border: 3px solid #7777771f;
+    padding: 15px 15px 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    .action-bar{
+      z-index: -1;
+    }
+    &:hover .action-bar{
+      right: 9px;
+      z-index: 1;
+    }
+    .product-image > img{
+      width: 150px;
+      height: 166px;
+      transition: all ease 0.3s;
+      &:last-child{
+        display: none;
+      }
+    }
+    &:hover .product-image > img{
+      &:nth-child(1){
+        display: none;
+      }
+      &:last-child{
+        display: block;
+      }
+   }    
+}
+  .product-details{
+    .brand{
+      color: var(--color-bf4800);
+      font-size: 13px;
+    }
+    .title{
+      font-size: 15px;
+      color: var(--color-1c1c1b);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+      height: 52px;
+    }
+    .price{
+      font-size: 16px;
+      color: var(--color-1c1c1b);
+    
+    }
+  } 
+  .action-bar{
+    top:12%;
+    right:-24px;
+    transition:all ease 0.3s ;
+  }
+  .wishList-icon{
+    top:2%;
+    right:10px;
+  }
+  .number-discount{
+    font-size: 12px;
+    top:3%;
+    padding:1px 3px;
+    left:10px;
+    background-color: var(--color-febd69);
+    color: #000;
+    border-radius: 10px;
+  }
+  .price-default{
+    text-decoration-line: line-through;
+  }
+  .price-after-discount {
+    color: red;
+    font-size: 18px;
+    margin-right: 12px;
+  }
+  .description {
+    width: 90%;
+    color: var(--color-777777);
+    font-size: 14px;
+  }
+.gr-12{
+    .product-image img{
+      width: 220px;
+     height: 240px;
+    }
+    .desc-product-card{
+      overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80%;
+        height: 120px;
+    }
+    .product-card{
+      .action-bar{
+        z-index: -1;
+        left:24%;
+      }
+      &:hover .action-bar,
+      .wishList-icon 
+      {
+        width: 28px;
+        left: 22%;
+        z-index: 1;
+      }
+    }
+  }
+.gr-12 , .gr-6, .gr-4{
+    .product-image img{
+      width: 220px;
+     height: 240px;
+    }
+    .title{
+      width: 95%;
+    }
+  }

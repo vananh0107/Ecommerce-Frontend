@@ -1,0 +1,7 @@
+.popular-wrapper .swiper-wrapper{
+  margin-left: -86px;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
