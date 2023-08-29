@@ -1,4 +1,4 @@
-export const base_url = 'http://localhost:3001/api/';
+export const base_url = 'https://ecomerce-api-lt0j.onrender.com/api/';
 const getTokenFromLocalStorage = localStorage.getItem('customer')
   ? JSON.parse(localStorage.getItem('customer'))
   : null;
