@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductWish.scss';
+import ProductCard from '../ProductFeature/ProductFeature';
 const ProductWish = (props) => {
   const { _id, title, price, discount } = { ...props.data };
   const Handleremove = props.remove;
@@ -13,10 +14,8 @@ const ProductWish = (props) => {
         alt="cross"
         className="position-absolute cross img-fluid"
       />
-      <div className="wishlist-card-image">
-        <img src="images/watch.jpg" className="img-fluid w-100" alt="watch" />
-      </div>
-      <div className="py-3 px-3">
+      <ProductCard item={props.data } key={props.data&&props.data['_id']} grid='col-12'/>
+      {/* <div className="py-3 px-3">
         <h5 className="title">{title}</h5>
         {discount ? (
           <p className="price">
@@ -31,7 +30,7 @@ const ProductWish = (props) => {
         ) : (
           <p className="price">{price}</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

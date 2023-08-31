@@ -23,7 +23,7 @@ const ProdSpecialWrap = () => {
           {productCategory?.map((item, index) => {
             if (index < 6 && index !== 1) {
               return (
-                <div className="popular-prod-type my-3">
+                <div className="popular-prod-type my-3" key={item&&item['_id']}>
                   <img src={item?.image} alt={item?.title} />
                   <span className="p-color popular-prod-name text-active">
                     {item?.title}
@@ -54,8 +54,8 @@ const ProdSpecialWrap = () => {
             productState?.map((item, index) => {
               if (item?.tags === 'popular') {
                 return (
-                  <SwiperSlide key={index}>
-                    <ProductCard index={index} item={item} />
+                  <SwiperSlide key={item&&item['_id']}>
+                    <ProductCard index={index} item={item}/>
                   </SwiperSlide>
                 );
               }

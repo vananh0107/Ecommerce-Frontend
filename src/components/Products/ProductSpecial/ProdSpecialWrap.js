@@ -19,7 +19,7 @@ const ProdSpecialWrap = (props) => {
             if (countProduct < props?.length && item?.tags === 'special') {
               countProduct++;
               return (
-                <SpecialProduct key={index} data={item} image={item?.images} />
+                <SpecialProduct key={item&&item['_id']} data={item} image={item?.images} />
               );
             }
           })}

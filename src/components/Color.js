@@ -14,7 +14,7 @@ const Color = (props) => {
                 cursor: 'pointer',
               }}
               onClick={() => {
-                props?.setColor(item._id);
+                props?.setColor(item['_id']);
               }}
             ></li>
           );

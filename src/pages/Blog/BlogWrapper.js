@@ -23,7 +23,7 @@ const BlogWrapper = () => {
         {blogState?.map((item, index) => {
           if (index < 4) {
             return (
-              <div className="col-3" key={index}>
+            <div className="col-3" key={item&&item['_id']}>
                 <BlogCard data={item} />
               </div>
             );

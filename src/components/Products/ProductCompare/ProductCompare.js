@@ -15,8 +15,8 @@ const ProductCompare = (props) => {
       >
         <AiOutlineClose />
       </span>
-      <div className="product-card-image">
-        <img src="images/watch.jpg" alt="watch" />
+      <div className="product-image py-3">
+        <img src={data?.images[0].url} alt="watch" className='img-fluid img-commpare' />
       </div>
       <div className="compare-product-details">
         <h5 className="title">{data.title}</h5>

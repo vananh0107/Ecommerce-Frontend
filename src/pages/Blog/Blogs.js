@@ -30,12 +30,12 @@ const Blogs = () => {
           <div className="row">
             <div className="col-3">
               <div className="filter-card mb-3">
-                <h3 className="filter-title">Shop By Categories</h3>
+                <h3 className="filter-title">Blog Categories</h3>
                 <div>
                   <ul className="ps-0">
                     {categoryList?.map((item, index) => {
                       return (
-                        <li key={index} onClick={() => setCategory(item.title)}>
+                        <li key={item&&item['_id']}onClick={() => setCategory(item.title)}>
                           {item.title}
                         </li>
                       );
@@ -48,7 +48,7 @@ const Blogs = () => {
               <div className="row">
                 {blogState?.map((item, index) => {
                   return (
-                    <div className="col-6 mb-3" key={index}>
+                    <div className="col-6 mb-3" key={item&&item['_id']}>
                       <BlogCard data={item} />
                     </div>
                   );

@@ -71,7 +71,7 @@ const OurStore = () => {
                     [...new Set(categories)].map((item, index) => {
                       return (
                         <li
-                          key={index}
+                          key={item&&item['_id']}
                           className="mt-1"
                           onClick={() => setCategory(item.title)}
                         >
@@ -122,7 +122,7 @@ const OurStore = () => {
                     [...new Set(brands)].map((item, index) => {
                       return (
                         <span
-                          key={index}
+                          key={item&&item['_id']}
                           className="product-tags-item p-color"
                           onClick={() => setBrand(item.title)}
                         >
@@ -141,7 +141,7 @@ const OurStore = () => {
                     [...new Set(tags)].map((item, index) => {
                       return (
                         <span
-                          key={index}
+                          key={item&&item['_id']}
                           className="product-tags-item p-color"
                           onClick={() => setTag(item)}
                         >

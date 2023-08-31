@@ -15,6 +15,7 @@ const CategoryWrapper = () => {
       {data?.map((item, index) => {
         return (
           <Category
+            key={item&&item['_id']}
             src={item?.image}
             title={item?.title}
             quantity={number && number[index]?.count}

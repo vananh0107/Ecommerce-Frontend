@@ -52,7 +52,7 @@ const SingleProduct = () => {
   const dataColor = [];
   colorState?.forEach((element) => {
     singleProductState?.color?.forEach((color) => {
-      if (element._id === color) dataColor.push({ title: element.title });
+      if (element['_id'] === color) dataColor.push({ title: element.title,_id: element['_id'] });
     });
   });
   useEffect(() => {
@@ -71,12 +71,11 @@ const SingleProduct = () => {
     textField.remove();
   };
   const handleOption = (e) => {
-    console.log(e.target.querySelector('.down').classList);
-    e.target.querySelector('.down').classList.toggle('d-none');
-    e.target.querySelector('.up').classList.toggle('d-none');
+    e.target.querySelector('.down')?.classList.toggle('d-none');
+    e.target.querySelector('.up')?.classList.toggle('d-none');
     e.target.parentElement
       .querySelector('.product-data')
-      .classList.toggle('d-block');
+      ?.classList.toggle('d-block');
   };
   const handleCopy = () => {
     copyToClipboard(window.location.href);
@@ -175,7 +174,7 @@ const SingleProduct = () => {
                 >
                   {singleProductState?.images?.map((item, index) => {
                     return (
-                      <SwiperSlide key={index}>
+                      <SwiperSlide key={item&&item['_id']}>
                         <img
                           src={item?.url}
                           alt={singleProductState?.title}
@@ -454,7 +453,7 @@ const SingleProduct = () => {
                 {singleProductState?.rating?.map((item) => {
                   const day = new Date(item?.date);
                   return (
-                    <div className="review">
+                    <div className="review" key={item&&item['_id']}>
                       <ReactStars
                         count={5}
                         size={24}
@@ -489,7 +488,7 @@ const SingleProduct = () => {
             productsState?.map((item, index) => {
               if (index < 6) {
                 if (item?.title !== singleProductState?.title)
-                  return <ProductCard index={index} item={item} />;
+                  return <ProductCard index={index} item={item} key={item&&item['_id']}/>;
               }
             })}
         </div>

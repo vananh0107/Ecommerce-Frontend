@@ -39,11 +39,14 @@ const Checkout = () => {
     },
     validationSchema: shippingSchema,
     onSubmit: (values) => {
+      
       let data = {};
       data.shippingInfor = values;
       data.orderItems = userCart && userCart[0]?.products;
       data.totalPrice = (userCart && userCart[0].cartTotal) + 20;
       data.totalPriceAfterDiscount = (userCart && userCart[0].cartTotal) + 20;
+      data.color=userCart && userCart[0]?.color;
+      console.log(data)
       dispatch(createCashOrder(data));
       dispatch(getUserCart());
       navigate('/my-orders');
@@ -260,10 +263,10 @@ const Checkout = () => {
                 <div className="border-bottom py-4">
                   <div className="d-flex gap-10 mb-2 align-items-center">
                     <div className="w-75 d-flex gap-10">
-                      <div className="w-25 position-relative">
-                        <img className="img-fluid" src={watch} alt="product" />
+                      <div className="w-25 position-relative mt-3 img-checkout ">
+                        <img className="img-fluid" src={product?.product?.images[0].url} alt="product" />
                       </div>
-                      <div>
+                      <div className='w-75'>
                         <p className="item-color fs-6 my-2 text-capital">
                           {product.product.title}
                         </p>

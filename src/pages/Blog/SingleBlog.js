@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import BreadCrumb from '../../components/BreadCrumb';
 import { HiOutlineArrowLeft } from 'react-icons/hi';
@@ -16,6 +16,8 @@ const SingleBlog = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const getBlogId = location.pathname.split('/')[2];
+  let categoryList = useSelector((state) => state?.blog.category);
+  const [category, setCategory] = useState(null);
   useEffect(() => {
     dispatch(getSingleBlog(getBlogId));
   }, []);
@@ -30,15 +32,18 @@ const SingleBlog = () => {
             <div className="col-12 d-flex">
               <div className="col-3">
                 <div className="filter-card mb-3">
-                  <h3 className="filter-title">Shop By Categories</h3>
-                  <div>
-                    <ul className="ps-0">
-                      <li>Home</li>
-                      <li>Our Store</li>
-                      <li>Blogs</li>
-                      <li>Contact</li>
-                    </ul>
-                  </div>
+                <h3 className="filter-title">Blog Categories</h3>
+                <div>
+                  <ul className="ps-0">
+                    {categoryList?.map((item, index) => {
+                      return (
+                        <li key={item&&item['_id']}onClick={() => setCategory(item.title)}>
+                          {item.title}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
                 </div>
               </div>
               <div className="single-blog-card col-9 mx-3">
@@ -47,8 +52,11 @@ const SingleBlog = () => {
                     {blogState.singleblog?.getBlog?.title}
                   </h3>
                   <img src={blog} className="img-fluid w-100 my-4" alt="blog" />
-                  <p className="blog-content mb-0">
-                    {blogState.singleblog?.getBlog?.description}
+                  <p className="blog-content mb-0 mw-100 " dangerouslySetInnerHTML={{
+                  __html: blogState.singleblog?.getBlog.description,
+                }}>
+
+                    {/* {blogState.singleblog?.getBlog?.description} */}
                   </p>
                   <p className="blog-desc">
                     <span className="blog-date">

@@ -27,7 +27,7 @@ const ProdFeatureWrap = (props) => {
           productFeature?.map((item, index) => {
             if (countItem < 6 && item?.tags === 'featured') {
               countItem++;
-              return <ProductCard index={index} item={item} />;
+              return <ProductCard index={index} item={item} key={item&&item['_id']}/>;
             }
           })}
       </div>

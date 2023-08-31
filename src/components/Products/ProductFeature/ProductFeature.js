@@ -56,7 +56,7 @@ const ProductCard = (props) => {
       <div
         key={index}
         className={` ${
-          location.pathname === '/product' ? `gr-${grid}` : 'col-2'
+          location.pathname === '/product'||props?.grid ? `gr-${grid}` : 'col-2'
         } `}
       >
         <div className="product-card position-relative">

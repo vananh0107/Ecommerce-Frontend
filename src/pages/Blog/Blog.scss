@@ -13,6 +13,10 @@
   .blog-content{
     padding: 15px; 
   }
+  .blog-content img{
+    max-width: 100%;
+    height: auto;
+  }
   .blog-content .date{
     font-size: 13px;
     line-height: 24px;

@@ -8,7 +8,7 @@ const Category = (props) => {
   const dispatch = useDispatch();
   const handleClick = () => {
     navigate(`/product?category=${props.title}`);
-    // dispatch(getAllProducts({ category: props.title }));
+    dispatch(getAllProducts({ category: props.title }));
   };
   return (
     <div

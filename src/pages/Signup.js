@@ -7,6 +7,8 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../features/user/userSlice';
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 const signUpSchema = yup.object({
   firstname: yup.string().required('First name is required'),
   lastname: yup.string().required('Last name is required'),
@@ -28,8 +30,13 @@ const Signup = () => {
       password: '',
     },
     validationSchema: signUpSchema,
-    onSubmit: (values) => {
-      dispatch(registerUser(values));
+    onSubmit: async (values) => {
+      const result = await dispatch(registerUser(values));
+      if (result.error.message === 'Rejected') {
+        toast.error('User has already exists');
+      } else {
+        toast.success('Register successfully');
+      }
     },
   });
   return (
@@ -104,9 +111,17 @@ const Signup = () => {
                 </div>
                 <div>
                   <div className="mt-3 d-flex justify-content-center gap-15 align-items-center">
-                    <button className="button border-0" type="submit">
-                      Sign Up
-                    </button>
+                    <div className="mt-3 d-flex justify-content-center gap-15 align-items-center">
+                      <Link to="/login" className="button button-small signup ">
+                        Login
+                      </Link>
+                      <button
+                        className="button button-small border-0 p-0"
+                        type="submit"
+                      >
+                        Sign up
+                      </button>
+                    </div>
                   </div>
                 </div>
               </form>

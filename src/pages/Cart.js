@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import BreadCrumb from '../components/BreadCrumb';
 import Meta from '../components/Meta';
-import { AiFillDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Container from '../components/Container';
 import CartProduct from '../components/Products/CartProduct';
@@ -9,17 +8,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   deleteCartProduct,
   getUserCart,
-  updateCartProduct,
 } from '../features/user/userSlice';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 const Cart = () => {
   const dispatch = useDispatch();
+  const [isReloadProductList,setReloadProductList]=useState(false)
   useEffect(() => {
     dispatch(getUserCart());
-  }, []);
+  }, [isReloadProductList]);
   let userCartProduct = useSelector((state) => state?.auth?.userCart);
-  const [cartState, setCartStatel] = useState({
+  const [cartState, setCartState] = useState({
     products: null,
     cartTotal: null,
   });
@@ -29,19 +27,19 @@ const Cart = () => {
   const deleteProductFormCart = (id, color) => {
     const inforItem = {
       id: id,
-      color: color.slice(1),
+      color: color?.slice(1),
     };
     dispatch(deleteCartProduct(inforItem));
     setTimeout(() => {
       dispatch(getUserCart());
-    }, 200);
+    }, 300);
   };
   useEffect(() => {
-    setCartStatel({
+    setCartState({
       products: userCartProductChange?.products,
       cartTotal: userCartProductChange?.cartTotal,
     });
-  }, [userCartProductChange]);
+  }, [isReloadProductList]);
   return (
     <>
       <Meta title={'Cart'} />
@@ -62,19 +60,20 @@ const Cart = () => {
               </p>
             </div>
             <div>
-              {(cartState.products
+              {(/*cartState.products
                 ? cartState.products
-                : userCartProduct && userCartProduct[0]?.products
+                :*/ userCartProduct && userCartProduct[0]?.products
               )?.map((item, index) => {
                 return (
                   <CartProduct
-                    src="images/watch.jpg"
+                    src={item?.product?.images?item?.product?.images[0]?.url : ''}
+                    reRender={setReloadProductList}
                     color={item?.color}
                     price={item?.price}
                     title={item?.title}
                     description={item?.description}
                     total="$100"
-                    key={index}
+                    key={item&&item['_id']}
                     quantity={item?.count}
                     delete={deleteProductFormCart}
                     id={
@@ -105,7 +104,7 @@ const Cart = () => {
                 {
                   <Link
                     to={
-                      userCartProductChange?.products?.length > 0
+                      userCartProduct?.length > 0
                         ? '/checkout'
                         : undefined
                     }

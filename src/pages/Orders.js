@@ -67,14 +67,12 @@ const Orders = () => {
                         <div className="col-5">
                           <h6>Information</h6>
                         </div>
+                        <div className="col-2"></div>
                         <div className="col-2">
                           <h6>Price</h6>
                         </div>
                         <div className="col-2">
                           <h6>Quantity</h6>
-                        </div>
-                        <div className="col-2">
-                          <h6>Color</h6>
                         </div>
                       </div>
                     </div>
@@ -87,15 +85,19 @@ const Orders = () => {
                             <div className="col-1">{index + 1}</div>
                             <div className="col-2">
                               <img
-                                src="images/watch.jpg"
+                                src={
+                                  item?.product?.images
+                                    ? item?.product?.images[0].url
+                                    : ''
+                                }
                                 className="img-fluid"
-                                alt="watch"
+                                alt={item.product.title}
                               />
                             </div>
                             <div className="col-3 px-4">
                               <h6>{item.product.title}</h6>
-                              <p className="fs-6">{item.product.description}</p>
                             </div>
+                            <div className="col-2"></div>
                             <div className="col-2">
                               <h6>{item.price}</h6>
                             </div>

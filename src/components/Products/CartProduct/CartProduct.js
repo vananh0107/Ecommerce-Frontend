@@ -21,10 +21,11 @@ const CartProduct = (props) => {
   return (
     <div className="cart-data py-3 mb-2 d-flex justify-content-between align-items-center border-b">
       <div className="col-6 gap-15 d-flex align-items-center">
-        <div className="w-26">
-          <img src={props.src} className="img-fluid" alt="watch" />
+        <div className="w-25">
+          <img src={props.src} className="img-fluid img-cart" alt="watch" />
         </div>
-        <div className="w-74">
+        <div className="w-25"></div>
+        <div className="w-50">
           <p className="p-color fs-6 mb-2 d-flex">
             Color:{' '}
             <span className="mx-1">
@@ -32,7 +33,7 @@ const CartProduct = (props) => {
             </span>
           </p>
           <p className="p-color fs-6 mb-2">Title: {props.title}</p>
-          <p className="p-color fs-6 mb-2">Description: {props.description}</p>
+          {/* <p className="p-color fs-6 mb-2">Description: {props.description}</p> */}
         </div>
       </div>
       <div className="col-2 d-flex justify-content-end">
@@ -63,6 +64,7 @@ const CartProduct = (props) => {
             className="text-danger "
             onClick={() => {
               props.delete(props.id, props.color);
+              props.reRender(true)
             }}
           />
         </div>

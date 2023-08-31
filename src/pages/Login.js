@@ -24,8 +24,8 @@ const Login = () => {
       password: '',
     },
     validationSchema: loginSchema,
-    onSubmit: (values) => {
-      dispatch(loginUser(values));
+    onSubmit: async (values) => {
+      const result =await dispatch(loginUser(values));
       setTimeout((values) => {
         if (authState.user) {
           navigate('/');
@@ -80,7 +80,7 @@ const Login = () => {
                     >
                       Login
                     </button>
-                    <Link to="/signup" className="button button-small signup">
+                    <Link to="/signup" className="button button-small signup ">
                       SignUp
                     </Link>
                   </div>

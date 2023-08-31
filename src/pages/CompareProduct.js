@@ -5,7 +5,7 @@ import ProductCompare from '../components/Products/ProductCompare/ProductCompare
 import Container from '../components/Container';
 const CompareProduct = () => {
   const [getData, setData] = useState(localStorage.getItem('productCompare'));
-  if (JSON.parse(getData).length > 0) {
+  if (JSON.parse(getData)?.length > 0) {
     let data = JSON.parse(getData);
     const handleRemove = (index) => {
       data.splice(index, 1);

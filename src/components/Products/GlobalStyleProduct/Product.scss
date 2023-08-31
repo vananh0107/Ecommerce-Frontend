@@ -1,8 +1,12 @@
-.icon-add{
-    padding: 5px;
-    border-radius: 14px;
-    display: flex;
-    &:hover{
-      background-color:var(--color-febd69) ;
-    }
+.icon-add {
+  padding: 5px;
+  border-radius: 14px;
+  display: flex;
+  &:hover {
+    background-color: var(--color-febd69);
   }
+}
+.img-checkout {
+  height: 60;
+  object-fit: contain;
+}
