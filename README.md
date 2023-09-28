@@ -1,46 +1,34 @@
-# Getting Started with Create React App and Redux
+Home Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/1f450b2f-052c-45a6-8d1c-81e2bbf40472)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/a73e134f-5848-4c5b-9dd9-a2003458276b)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/c1a57a8f-1b36-41b6-aea7-30c2ecd4742b)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/8487b22e-b0cb-4a21-93ca-f03fa0b8fcb4)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/340d4630-02a8-4892-adc2-6a6528de7604)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/28c139dd-8fba-4b76-8b0c-b2ef51dfafa8)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/110c14c3-013d-4146-8771-9985161388aa)
 
-## Available Scripts
 
-In the project directory, you can run:
+Store Page
 
-### `npm start`
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/2f7bb807-c126-4f3d-a7f4-1f002fa9120e)
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/99268101-eb37-4e0b-adb7-cce41b63d51f)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Compare Page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/b56bd4bc-12a6-4dfc-bf82-a642cb85775f)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cart Page
 
-### `npm run build`
+![image](https://github.com/vananh0107/Ecommerce-frontend/assets/123862819/9496f506-6889-420e-ac79-eac251f62af4)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
